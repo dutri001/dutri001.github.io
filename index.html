@@ -3,10 +3,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Webpage Loic</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="js/mapScript.js" type="text/javascript"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/extra.css">
+
+    <style>
+    html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
 
   </head>
   
@@ -20,6 +32,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#map-canvas">Map</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -71,6 +84,7 @@
           </div>
         </div>
       </div>  
+
     </section>
 
     <div class="container">
@@ -78,9 +92,10 @@
       
 
     </div>
+
+    <div id="map-canvas"></div>
     
   </body>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+
 
 </html>
