@@ -15,7 +15,7 @@ highlighter: pygments
 
 
 ### content configuration ###
-title:       "Loïc Dutrieux
+title:       "Loïc Dutrieux"
 keywords:    "CV, Geo Analyst, programmer"
 description: "My digital CV"
 source_link: "https://github.com/dutri001.github.io"
