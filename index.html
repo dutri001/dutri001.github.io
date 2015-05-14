@@ -25,25 +25,6 @@
     </ul></nav>
 
 
-<!--Loic - Section added manually-->
-    <div class="section header-post">
-      <div class="container">
-
-        <span class="fa-stack subtlecircle" style="font-size:75px; background:rgba(255,166,0,0.1)">
-          <img class="header-img" src="../imgs/loic.jpg" />
-        </span>
-
-        <h1>Loïc Dutrieux<h1>
-
-        <ul class="list-inline">
-          <li><a href="https://nl.linkedin.com/in/loicdutrieux" class="btn-circle btn-social"><i class="ion-social-linkedin animated"></i></a></li>
-          <li><a href="https://github.com/dutri001" class="btn-circle btn-social"><i class="ion-social-github animated"></i></a></li>
-          <li><a href="https://plus.google.com/+loicdutrieux" class="btn-circle btn-social" class="ion-social-google-plus animated"></a></li>
-        </ul>
-
-      </div>
-    </div>
-
 
     {% for page in site.posts reversed %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
