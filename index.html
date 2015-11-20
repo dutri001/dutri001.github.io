@@ -68,10 +68,11 @@
   <script type="text/javascript" src="assets/js/timeLineEvents.js"></script>
     <script>
 
-        var timeLine = new TL.Timeline('timeLoic', timeEvents);
+        var timeLine = new TL.Timeline('timeLoic', timeEvents, {scale_factor: 0.7});
+
         window.onresize = function(event) {
            timeLine.updateDisplay();
-        }
+        };
 
         $(".tl-storyslider").remove();
 
