@@ -9,16 +9,16 @@
 	<meta name="keywords" content="{{ site.keywords }}">
 	<meta name="description" content="{{ site.description }}">
   <link rel="stylesheet" href="combo.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/timeline-min.css">
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'> <!-- Leaflet css stylesheet -->
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> <!-- Leaflet js library-->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
-	{% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ site.touch_icon }}">{% endif %}
+  {% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ site.touch_icon }}">{% endif %}
 </head>
 <body>
   <div id="main">
 
-    <nav><ul>
+    <nav style="z-index: 10000"><ul>
       {% for node in site.posts reversed %}
         {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
         <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
@@ -50,7 +50,6 @@
       </div>
     {% endfor %}
 
-
     <div id="footer" class="section text-white">
       <div class="container">
         {% capture foottext %} {% include footer.md %} {% endcapture %}
@@ -59,8 +58,85 @@
     </div>
   </div>
 
-{% include analytics.html %}
+  <!-- JS code and scripts below -->    
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> <!-- Leaflet js library-->
+  
+  <script src="assets/js/timeline-min.js"></script>
+  
+
+  <script type="text/javascript" src="assets/js/timeLineEvents.js"></script>
+    <script>
+
+        var timeLine = new TL.Timeline('timeLoic', timeEvents);
+        window.onresize = function(event) {
+           timeLine.updateDisplay();
+        }
+
+        $(".tl-storyslider").remove();
+
+        // Leaflet
+
+
+        var map = L.map('map').setView([46, -0.24], 2);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibGR1dHJpZXV4IiwiYSI6ImxDbHhqSmMifQ.zOI1puGw8KMRARemq386qA', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'mapbox.pirates'
+        }).addTo(map);
+
+        // for loop
+        $(timeEvents["events"]).each(function(index, value){
+            L.marker([value["coords"]["lat"],value["coords"]["lng"]])
+              .bindPopup(value["city"]).addTo(map);
+        });
+
+        // The text box
+        var info = L.control({"position": "topleft"});
+
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+
+        info.update = function (heading, text, media) {
+            var content = ['<div style="width: 250px">',
+                '<h2>', heading, '</h2>',
+                '<p>', text, '</p>'
+            ];
+            if(media) {
+                content = content.concat(['<img src=' + media + '></img>']);
+            }
+            content = content.concat(['</div>']);
+            this._div.innerHTML = content.join(" ");
+        };
+
+        info.addTo(map);
+
+        // Link the events
+        timeLine.on("change", function(data){
+            var mySlide = timeLine.getDataById(data.unique_id);
+            // Get text to add to control
+            info.update(mySlide["text"]["headline"], mySlide["text"]["text"], mySlide["media"]["image"]);
+            map.setView(mySlide["coords"], 6, {"animate": true, "pan":{"duration": 1}});
+        });
+
+        // Re-center the timeline on the right event when clicking on a map marker
+        // TODO
+
+        // Handle initial state
+        var mySlide = timeLine.getData(0);
+        info.update(mySlide["text"]["headline"], mySlide["text"]["text"], mySlide["media"]["image"]);
+
+    </script>
+
+
+  {% include analytics.html %}
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="site.js"></script>
 </html>
