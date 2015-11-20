@@ -1,7 +1,19 @@
 var timeEvents = {
-        "scale": "human",
+        "title": {
+            "text": {
+                "headline": "",
+                "text":     ""
+            }
+        },
 
         "events": [
+        /*{
+            
+            "text": {
+                "headline": "TimeMap",
+                "text": "Click on the events of the time-line to navigate through the time-map"
+            }
+        },*/
         {
             "start_date": {
                 "year":         "1987",
