@@ -12,8 +12,8 @@ var timeEvents = {
                 "month": "9"
             },
             "media": {
-                "image": "imgs/loic.jpg",
-                "thumbnail": "imgs/loic.jpg"
+                "image": "imgs/romponFull.jpg",
+                "thumbnail": "imgs/romponFull.jpg"
             },
             "text": {
                 "headline": "Rompon, Ardèche, France",
@@ -35,8 +35,8 @@ var timeEvents = {
                 "month": "09"
             },
             "media": {
-                "image": "imgs/loic.jpg",
-                "thumbnail": "imgs/loic.jpg"
+                "image": "imgs/digne.jpg",
+                "thumbnail": "imgs/digne.jpg"
             },
             "text": {
                 "headline": "Digne-les-Bains, France",
@@ -58,8 +58,7 @@ var timeEvents = {
                 "month": "09"
             },
             "media": {
-                "image": "imgs/loic.jpg",
-                "thumbnail": "imgs/loic.jpg"
+                "thumbnail": "imgs/esa.jpg"
             },
             "text": {
                 "headline": "Angers, France",
@@ -81,8 +80,8 @@ var timeEvents = {
                 "month": "09"
             },
             "media": {
-                "image": "imgs/loic.jpg",
-                "thumbnail": "imgs/loic.jpg"
+                "image": "imgs/belize.jpg",
+                "thumbnail": "imgs/belize.jpg"
             },
             "text": {
                 "headline": "Central Farm, Belize",
@@ -104,8 +103,8 @@ var timeEvents = {
                 "month": "04"
             },
             "media": {
-                "image": "imgs/loic.jpg",
-                "thumbnail": "imgs/loic.jpg"
+                "image": "imgs/wageningenFull.jpg",
+                "thumbnail": "imgs/wageningenFull.jpg"
             },
             "text": {
                 "headline": "Wageningen, The Netherlands",
@@ -127,8 +126,8 @@ var timeEvents = {
                 "month": "11"
             },
             "media": {
-                "image": "imgs/loic.jpg",
-                "thumbnail": "imgs/loic.jpg"
+                "image": "imgs/maliFull.jpg",
+                "thumbnail": "imgs/maliFull.jpg"
             },
             "text": {
                 "headline": "Niono, Mali",
@@ -150,8 +149,8 @@ var timeEvents = {
                 "month": "12"
             },
             "media": {
-                "image": "imgs/loic.jpg",
-                "thumbnail": "imgs/loic.jpg"
+                "image": "imgs/AfricaRice.jpg",
+                "thumbnail": "imgs/AfricaRice.jpg"
             },
             "text": {
                 "headline": "Cotonou, Benin",
