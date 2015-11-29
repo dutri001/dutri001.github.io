@@ -52,7 +52,7 @@ var timeEvents = {
             },
             "text": {
                 "headline": "Digne-les-Bains, France",
-                "text": "After graduating from high school, I joined university of Digne-les-Bains, where I studied biology and environmental engineering. Besides staying close to the mountains and going mountainering and skying litteraly every week, I learnt about a wide array of topics there, ranging from molecular biology to waste water management and from geology to river management; always in an Mediterraneo-alpine context."
+                "text": "After graduating from high school, I joined university of Digne-les-Bains, where I studied biology and environmental engineering. Besides staying close to the mountains and going mountainering and skying litteraly every week, I learnt about a wide array of topics, ranging from molecular biology to waste water management and from geology to river management; always in an Mediterraneo-alpine context."
             },
             "coords" : {
                 "lng": 6.236,
@@ -77,7 +77,7 @@ var timeEvents = {
                 "text": "I then joined an Agriculture engineering university from which I optained my first master degree, specialized in Agronomy and Landscape ecology"
             },
             "coords" : {
-                "lng": 0.554,
+                "lng": -0.554,
                 "lat": 47.473
             },
             "city" : "Angers"
@@ -143,7 +143,7 @@ var timeEvents = {
             },
             "text": {
                 "headline": "Niono, Mali",
-                "text": "As part of my master thesis, I went to Mali in 2010. I researched what were the parameters affecting water productivity in irrigated rice systems research on irrigated rice combining field inventories and remote sensing"
+                "text": "As part of my master thesis, I went to Mali in 2010. I did research about water productivity in irrigated rice systems research on irrigated rice combining field inventories and remote sensing"
             },
             "coords" : {
                 "lng": -5.986,
