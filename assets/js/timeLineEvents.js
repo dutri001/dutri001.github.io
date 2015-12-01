@@ -143,7 +143,7 @@ var timeEvents = {
             },
             "text": {
                 "headline": "Niono, Mali",
-                "text": "As part of my master thesis, I went to Mali in 2010. I did research about water productivity in irrigated rice systems research on irrigated rice combining field inventories and remote sensing"
+                "text": "As part of my master thesis, I went to Mali in 2010. I did research about water productivity in irrigated rice systems by combining field inventories and remote sensing"
             },
             "coords" : {
                 "lng": -5.986,
