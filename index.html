@@ -1,48 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <title>Loïc Dutrieux</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Loïc's broken page</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <!--animation-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--facebook and info icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--use a better font for this web map-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-  </head>
-  <body>
-    <div class="container">
-      
-  <!-- Light grey background, nice font -->
-      <div class="jumbotron">
-      <center>
-        <h1>Loïc Dutrieux</h1>
-        <h3><em>Geo-Spatial data specialist</em></h3>
-      </center>
-      </div>
+    <link rel="stylesheet" href="css/storymap.css">
+    <!--add favicon for the web page-->
 
-      <div class="row">
-        <div class="col-md-12">
-          <img style="float:left; margin-right:30px;" src="img/profile_1.JPG" width="20%">
-          <h3>Sorry, my website broke!! Until I build a new one, feel free to take a look at my <a href="https://www.dropbox.com/s/3a4kkuy9e1vohlk/loic_dutrieux_cv_en.pdf?dl=1">CV</a></h3>
+    <style>
+        .begin-background-img {
+            background: url(img/bg1.jpg) no-repeat center center fixed;
+            background-size: 100%;
+/*            -webkit-filter: contrast(100%);
+            -webkit-filter: brightness(100%);*/
+        }
+
+    </style>
+
+    <!--add required libraries-->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!--story map plugin-->
+    <script src="js/storymap.js"></script>
+
+    <!-- mini globle map -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="js/globeminimap.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 main">
+            <section data-scene="overview">
+                 <div class= "begin-background-img background-fullscreen-setting text-center" >
+                    <br><br><br><br><br><br><br><br><br>
+                <h4>I'm Loïc ... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+                </div>
+            </section>
+            <section data-scene="rompon">
+                <h2>Rompon</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+            <section data-scene="digne">
+                <h2>Digne Les Bains</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+            <section data-scene="angers">
+                <h2>Angers</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+            <section data-scene="belize">
+                <h2>Central Farm, Belize</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+            <section data-scene="wageningen">
+                <h2>Wageningen</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+            <section data-scene="mali">
+                <h2>Niono, Mali</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+            <section data-scene="mexico">
+                <h2>Mexico City</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+
+
+
         </div>
-      </div>
-
-
-
-
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+        <!--map div-->
+        <div id="map" class="col-sm-6 col-md-8 sidebar"></div>
     </div>
-  </body>
+    <!--add a scrolling down arrow-->
+    <div class="animated zoomIn infinite glyphicon glyphicon-menu-down arrow-down"></div>
+    <!--add a navigation bar-->
+    <div class="navwidget text-center"></div>
+
+    <!--add loading page -->
+    <div class="glyphicon glyphicon-refresh loader"></div>
+
+    <!--the info page-->
+    <div class="modal fade" id="info-modal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This is a web map of major cities in Oregon. It is mainly made as a demo for a course GEOG 371: Web Mapping provided by Oregon State University. The story map library is derived from the storymap plugin for leaflet at <a>http://atlefren.github.io/storymap/</a>, and its functionality relies on both leaflet and Boostrap.</p>
+                    <p><b>storymap.js</b> | Released Date: 02/20/2017 | Version: 2.1 | MIT License </p>
+                    <p><b>Author: Bo Zhao</b> | College of Earth, Ocean, Atmospheric Science | Oregon State University </p>
+                    <p>The context about Oregon cities was collected from Wikipedia.</p>
+                    <p>The <a src="https://www.youtube.com/watch?v=UJ_vQC9PNY4">background video</a> on the front page was clipped from Youtube. </p>
+                    <p>The favicon image was acquired from <a>http://www.udlcenter.org/advocacy/state/oregon.</a></p>
+                    <p>This story map uses geospatial data from mapbox, Google Earth Engine, Microsoft Bing map, Open Street Maps and Oregon Explorer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- main javascript -->
+<script type="text/javascript">
+    // For each layer, the first variable is the layer, the second is the legend. The layer variable can be any kinds of layers that leaflet.js supports.
+    // var layers = {
+    //      'layer1': [layer1, legend1]
+    //      'layer2': [layer2, legend2]
+    //      ...
+    // }
+    var layers = {
+        'satellite': [ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibGR1dHJpZXV4IiwiYSI6ImxDbHhqSmMifQ.zOI1puGw8KMRARemq386qA', {
+            id: 'mapbox.satellite'
+        })]
+    };
+    var scenes = {
+        overview: {lat: 44, lng: 6, zoom: 7, position: 'fullpage', name: 'Cover Page'},
+        rompon: {lat: 44.762195, lng: 4.7197069, zoom: 17, name: 'Rompon', layers: ['satellite']},
+        digne: {lat: 44.0921929, lng: 6.235976, zoom: 14, name: 'Digne Les Bains', layers: ['satellite']},
+        angers: {lat: 47.478419, lng: -0.56316599, zoom: 13, name: 'Angers', layers: ['satellite']},
+        belize: {lat: 17.1821925, lng: -89.0029938, zoom: 17, name: 'Central Farm, Belize', layers: ['satellite']},
+        wageningen: {lat: 51.9691868, lng: 5.6653948, zoom: 14, name: 'Wageningen', layers: ['satellite']},
+        mali: {lat: 14.2389689, lng: -5.956242, zoom: 11, name: 'Niono, Mali', layers: ['satellite']},
+        mexico: {lat: 19.357617, lng: -99.16023, zoom: 7, name: 'Mexico City', layers: ['satellite']},
+        end: {lat: 44, lng: 6, zoom: 7, name: 'The End', position: 'fullpage'}
+    };
+    $('.main').storymap({
+        scenes: scenes,
+        layers: layers,
+        legend: false, // if you do not want a legend feature, you can simply not define the createLegend function.
+        scale: false,
+        navwidget: true,
+        createMap: function () {
+            // create a map in the "map" div, set the view to a given place and zoom
+            var map = L.map('map', {zoomControl: false, scrollWheelZoom: false}).setView([44, 6], 7);
+            // add an base map, which can be either OSM, mapbox, tilelayer, wmslayer or those designed by yourself.
+            L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png').addTo(map);
+            // create a mini globe as the overview map control.
+            var miniMap = new L.Control.GlobeMiniMap({
+                marker:'red',
+                position: 'bottomright'
+            }).addTo(map);
+            // hidden the credits, but show in the about page.
+            $(".leaflet-control-attribution").css("display", "none");
+            return map;
+        }
+    });
+</script>
+</body>
 </html>
