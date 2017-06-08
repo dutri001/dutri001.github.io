@@ -47,16 +47,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 col-md-4 main">
-            <section data-scene="overview">
-                 <div class= "begin-background-img background-fullscreen-setting text-center" >
-                    <br><br><br><br><br><br><br><br><br>
-                <h4>I'm Loïc ... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            <section data-scene="welcome">
+                <img style="border-radius: 50%; margin: auto; display: block; margin-bottom: 20px; margin-top: 20px" src="img/profile_2.jpg" width="30%">
+                <p>I'm Loïc ... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-                </div>
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </section>
             <section data-scene="rompon">
                 <h2>Rompon</h2>
@@ -179,21 +177,115 @@
     //      'layer2': [layer2, legend2]
     //      ...
     // }
+    var cities_geojson = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        4.7197069,
+                        44.762195
+                    ]
+                },
+                "type": "Feature",
+            },
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        6.235976,
+                        44.0921929
+                    ]
+                },
+                "type": "Feature",
+            },
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -0.56316599,
+                        47.478419
+                    ]
+                },
+                "type": "Feature",
+            },
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -89.0029938,
+                        17.1821925
+                    ]
+                },
+                "type": "Feature",
+            },
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        5.6653948,
+                        51.9691868
+                    ]
+                },
+                "type": "Feature",
+            },
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -5.956242,
+                        14.2389689
+                    ]
+                },
+                "type": "Feature",
+            },
+            {
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -99.16023,
+                        19.357617
+                    ]
+                },
+                "type": "Feature",
+            }
+        ]
+    };
+
+    var geojsonMarkerOptions = {
+        radius:4,
+        fillColor: "red",
+        color: "red",
+        weight: 1,
+        opacity: 0.8,
+        fillOpacity: 0.8
+    };
+
+
+
     var layers = {
         'satellite': [ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibGR1dHJpZXV4IiwiYSI6ImxDbHhqSmMifQ.zOI1puGw8KMRARemq386qA', {
             id: 'mapbox.satellite'
-        })]
+        })
+        ],
+        'world': [ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibGR1dHJpZXV4IiwiYSI6ImxDbHhqSmMifQ.zOI1puGw8KMRARemq386qA', {
+            id: 'mapbox.dark'
+        })
+        ],
+        'locations_geojson': [L.geoJSON(cities_geojson, {pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    }})]
     };
     var scenes = {
-        overview: {lat: 44, lng: 6, zoom: 7, position: 'fullpage', name: 'Cover Page'},
+        welcome: {lat: 15, lng: -102, zoom: 2, name: 'welcome', layers: ['world', 'locations_geojson']},
         rompon: {lat: 44.762195, lng: 4.7197069, zoom: 17, name: 'Rompon', layers: ['satellite']},
         digne: {lat: 44.0921929, lng: 6.235976, zoom: 14, name: 'Digne Les Bains', layers: ['satellite']},
         angers: {lat: 47.478419, lng: -0.56316599, zoom: 13, name: 'Angers', layers: ['satellite']},
         belize: {lat: 17.1821925, lng: -89.0029938, zoom: 17, name: 'Central Farm, Belize', layers: ['satellite']},
         wageningen: {lat: 51.9691868, lng: 5.6653948, zoom: 14, name: 'Wageningen', layers: ['satellite']},
         mali: {lat: 14.2389689, lng: -5.956242, zoom: 11, name: 'Niono, Mali', layers: ['satellite']},
-        mexico: {lat: 19.357617, lng: -99.16023, zoom: 7, name: 'Mexico City', layers: ['satellite']},
-        end: {lat: 44, lng: 6, zoom: 7, name: 'The End', position: 'fullpage'}
+        mexico: {lat: 19.357617, lng: -99.16023, zoom: 7, name: 'Mexico City', layers: ['satellite', 'locations_geojson']}
     };
     $('.main').storymap({
         scenes: scenes,
