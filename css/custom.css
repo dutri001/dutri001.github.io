@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 100.01%;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	background-color: #f2f2f2;
+}
+
+body {
+	text-align: center;
+	font: 62.5%/1.5 Verdana, sans-serif;
+}
+
+.container {
+	width: 780px;
+	margin: 0 auto;
+	height: 100%;
+	text-align: left;
+	display: table;
+}
+.wrapper {
+	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 30px;
+}
+
+.profilePic {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-top: 1em;
+}
+
+.paragraph {
+	padding-left: 30px;
+	margin: 1.5em 0;
+}
+
+
+/*.about, .contacts {
+	padding-left: 30px;
+}*/
+
+p {
+	font-size: 1.6em;
+	margin: 1.5em 0;
+	color: #777;
+}
+h1 {
+	font: normal 4em/1.2 'Bad Script', cursive;
+	color: #bbb;
+	text-align: center;
+}
+h1 a {
+	text-decoration: none;
+	white-space: nowrap;
+	color: #555;
+}
+h2 {
+	font: normal 3em/1.2 'Bad Script', cursive;
+	color: #bbb;
+}
+h3 {
+	font: normal 2em/1.2 'Bad Script', cursive;
+	color: #bbb;
+	padding-left: 15px;
+}
+strong {
+	font-weight: normal;
+	color: black;
+}
+.paragraph a {
+	color: #264d00;
+
+	-webkit-transition: all 0.4s;
+	   -moz-transition: all 0.4s;
+	     -o-transition: all 0.4s;
+	        transition: all 0.4s;
+}
+.paragraph li {
+	font-size: 1.5em;
+	color: #777;
+}
+.container a:hover {
+	color: #00B4D6;
+}
+i {
+	margin: 0.5em;
+}
+.thumbnail {
+	width: 16em;
+	height: 10em;
+	display: inline-block;
+	margin-left: 0;
+	margin-right: 0;
+	-webkit-filter: contrast(70%);
+    -webkit-filter: brightness(60%);
+    /*padding-left: 30px;*/
+
+}
+.thumbnail:hover {
+    -webkit-filter: contrast(70%);
+    -webkit-filter: brightness(90%);
+}
+
+
+
+
+@media screen and (max-width: 780px) {
+	.container {
+		width: auto;
+	}
+	.paragraph {
+		padding: 0;
+	}
+	h3 {
+		padding: 0;
+	}
+	.thumbnail {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	h1 {
+		font-size: 2.4em;
+	}
+	h2 {
+		font-size: 1.8em;
+	}
+	h3 {
+		font-size: 1.6em;
+	}
+	p {
+		font-size: 1.4em;
+	}
+	.wrapper {
+		padding: 20px;
+		display: block;
+	}
+}
